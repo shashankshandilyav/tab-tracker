@@ -8,12 +8,13 @@ app.use(morgan('combined'));
 app.use(bodyparser.json());
 app.use(cors());
 
-app.get('/status', (req, res) => {
+app.post('/register', (req, res) => {
   console.log("Getting request")
   res.send({
-    message: 'hello world!'
+    message: `hello ${req.body.email} how are you doing?`
   })
 })
+
 app.listen(process.env.PORT || 8081,() => {
   console.log("Middlewear is active at port 8081")
 })
