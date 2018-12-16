@@ -1,5 +1,5 @@
 <template>
-  <main class="container mt-4" id="register">
+  <main class="container mt-4" id="login">
     <vs-row vs-justify="center">
       <vs-col type="flex" vs-justify="center" vs-align="center" class="col-md-6 col-sm-12">
         <vs-alert :active.sync="active" closable close-icon="cancel">
@@ -7,12 +7,12 @@
         </vs-alert>
         <vs-card>
           <div slot="header">
-            <h3>Please register</h3>
+            <h3>Welcome back!!</h3>
           </div>
-          <section class="register-main">
+          <section class="login-main">
             <vs-input label-placeholder="Pleaser enter your Email" vs-w="3" v-model="email"/>
             <vs-input type="password" label-placeholder="Password" vs-w="3" v-model="password"/>
-            <vs-button size="large" @click="register">Sign up</vs-button>
+            <vs-button size="large" @click="login" class="btn-block">Sign up</vs-button>
           </section>
         </vs-card>
       </vs-col>
@@ -33,9 +33,9 @@ export default {
   },
   watch: {},
   methods: {
-    async register() {
+    async login() {
       try {
-        await AuthService.register({
+        await AuthService.login({
           email: this.email,
           password: this.password
         });

@@ -1,8 +1,8 @@
 // tools
 @import '0-tools/tools';
-
+// base
+@import '1-base/base';
 // components
-@import '1-components/components';
-
+@import '2-components/components';
 //views
-@import '2-views/views';
+@import '3-views/views';
